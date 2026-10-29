@@ -105,3 +105,27 @@
   </script>
 </body>
 </html>
+
+<style>.video-frame img{display:block;width:100%;height:100%;object-fit:contain;background:#08090a}</style>
+<script>
+(()=>{
+  const items=Array.isArray(window.SPIKE_VIDEOS)?window.SPIKE_VIDEOS:[];
+  const cards=document.querySelectorAll('#portfolioGrid .work-card');
+  items.forEach((item,index)=>{
+    if(item.type!=='image')return;
+    const card=cards[index],frame=card&&card.querySelector('.video-frame');
+    if(!frame)return;
+    const image=document.createElement('img');
+    image.src=item.file;
+    image.alt=item.title||'SPIKE design work';
+    image.loading='lazy';
+    frame.replaceChildren(image);
+    const share=card.querySelector('.video-actions button');
+    if(share)share.textContent='Share design ↗';
+  });
+  const title=document.querySelector('#work h2');
+  if(title)title.textContent='Creative work, on show.';
+  const intro=document.querySelector('#work .section-head p');
+  if(intro)intro.textContent='Watch my reel edits and browse advertisement designs. Use the filters to explore each kind of work.';
+})();
+</script>
