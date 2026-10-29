@@ -151,3 +151,7 @@
  };loader.onerror=()=>{const s=document.getElementById('shareStatus');if(s)s.textContent='Gallery list could not be refreshed. Please reload the page.'};document.body.append(loader);
 })();
 </script>
+
+<script>
+(()=>{const link=[...document.querySelectorAll('#contact .contact-links a')].find(a=>a.textContent.includes('Instagram'));if(!link)return;link.href='https://www.instagram.com/spike_store.in/';const handle=link.querySelector('small');if(handle)handle.textContent='@spike_store.in';})();
+</script>
