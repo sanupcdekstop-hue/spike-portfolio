@@ -129,3 +129,25 @@
   if(intro)intro.textContent='Watch my reel edits and browse advertisement designs. Use the filters to explore each kind of work.';
 })();
 </script>
+
+<script>
+(()=>{
+ const loader=document.createElement('script');loader.src='portfolio-videos.js?v=20261030-gallery6';
+ loader.onload=()=>{
+  const items=Array.isArray(window.SPIKE_VIDEOS)?window.SPIKE_VIDEOS:[];
+  const grid=document.getElementById('portfolioGrid');if(!grid)return;grid.replaceChildren();
+  const status=document.getElementById('shareStatus');
+  items.forEach(item=>{
+   const card=document.createElement('article');card.className='work-card reveal visible';card.dataset.category=item.category||'shorts';
+   const frame=document.createElement('div');frame.className='video-frame';
+   if(item.type==='image'){const img=document.createElement('img');img.src=item.file;img.alt=item.title||'SPIKE design work';img.loading='lazy';frame.append(img)}
+   else{const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='metadata';video.setAttribute('aria-label',item.title||'SPIKE portfolio video');const source=document.createElement('source');source.src=item.file;source.type='video/mp4';video.append(source);frame.append(video)}
+   const h=document.createElement('h3');h.textContent=item.title||'SPIKE work';const p=document.createElement('p');p.textContent=item.description||'';
+   const actions=document.createElement('div');actions.className='video-actions';const share=document.createElement('button');share.type='button';share.textContent=item.type==='image'?'Share design ↗':'Share video ↗';
+   share.addEventListener('click',async()=>{const url=new URL(item.file,document.baseURI).href;if(navigator.share){try{await navigator.share({title:h.textContent,url});return}catch(e){if(e.name==='AbortError')return}}try{await navigator.clipboard.writeText(url);status.textContent='Link copied. Paste it into Discord or a message.'}catch{status.textContent='Work link: '+url}});
+   const discord=document.createElement('a');discord.href='https://discord.gg/SFktV6PY';discord.target='_blank';discord.rel='noopener noreferrer';discord.textContent='Open SPIKE Discord ↗';actions.append(share,discord);card.append(frame,h,p,actions);grid.append(card);
+  });
+  const empty=document.getElementById('portfolioEmpty');if(empty)empty.hidden=items.length>0;
+ };loader.onerror=()=>{const s=document.getElementById('shareStatus');if(s)s.textContent='Gallery list could not be refreshed. Please reload the page.'};document.body.append(loader);
+})();
+</script>
