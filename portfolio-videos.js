@@ -1,5 +1,44 @@
 window.SPIKE_VIDEOS = [
   {
+    title: "SPIKE — Glitch Banner",
+    category: "promo",
+    type: "image",
+    description: "A red glitch-style animated banner for SPIKE.",
+    file: "images/spike-glitch.gif"
+  },
+  {
+    title: "SPIKE — Neon Banner",
+    category: "promo",
+    type: "image",
+    description: "A blue neon-frame animation for SPIKE.",
+    file: "images/spike-neon.gif"
+  },
+  {
+    title: "SPIKE — Sunset Banner",
+    category: "promo",
+    type: "image",
+    description: "A warm sunset-gradient animation for SPIKE.",
+    file: "images/spike-sunset.gif"
+  },
+  {
+    title: "Shadow Tube — Glitch Motion",
+    category: "promo",
+    description: "A red glitch animation for Shadow Tube.",
+    file: "videos/shadowtube-glitch.mp4"
+  },
+  {
+    title: "Shadow Tube — Gold Motion",
+    category: "promo",
+    description: "A gold particle animation for Shadow Tube.",
+    file: "videos/shadowtube-gold.mp4"
+  },
+  {
+    title: "Shadow Tube — Money Motion",
+    category: "promo",
+    description: "A green animated banner for Shadow Tube.",
+    file: "videos/shadowtube-money.mp4"
+  },
+  {
     title: "Nexus Play — Red Banner",
     category: "promo",
     type: "image",
