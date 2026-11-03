@@ -18,6 +18,16 @@
     @media(max-width:950px){.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services-layout{grid-template-columns:1fr;gap:26px}.services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-art{right:-3%;width:55%;opacity:.55}}
     @media(max-width:650px){.wrap{width:calc(100% - 32px)}.bar{height:66px}.menu{display:block}.nav{display:none;position:absolute;top:65px;left:0;right:0;padding:18px 22px 22px;background:#0b0d0f;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}.nav.open{display:flex}.bar>.button{display:none}.hero{min-height:535px}.hero-copy{padding:78px 0 65px}.hero h1{font-size:clamp(3rem,13vw,4.5rem)}.hero-art{right:-28%;width:86%;opacity:.38}.orbit{width:74vw;right:-9%;top:20%}.hero-note{margin-top:35px}.section{padding:58px 0}.section-head{display:block}.filters{margin-top:18px}.work-grid{grid-template-columns:1fr;gap:20px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.service{padding:15px 13px;min-height:224px}.about-grid,.contact{grid-template-columns:1fr;gap:28px}.footer{flex-wrap:wrap}.footer>span{order:3;width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    .scroll-progress{position:fixed;inset:0 auto auto 0;width:100%;height:2px;z-index:40;pointer-events:none;background:linear-gradient(90deg,#d6f27a,#a5ffd0);box-shadow:0 0 14px #d6f27a88;transform:scaleX(0);transform-origin:left center}
+    .pointer-aura,.pointer-core{display:none;position:fixed;left:0;top:0;pointer-events:none;z-index:35;will-change:transform,opacity}
+    .pointer-aura{width:340px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(214,242,122,.16) 0,rgba(124,255,205,.07) 24%,rgba(214,242,122,.025) 44%,transparent 69%);mix-blend-mode:screen;opacity:0;transition:opacity .24s ease}
+    .pointer-core{width:8px;height:8px;border-radius:50%;background:#e7ff9b;box-shadow:0 0 8px 2px #d6f27a,0 0 24px 8px #b8f7608c;opacity:0;transition:opacity .2s ease,transform .18s ease,width .18s ease,height .18s ease}
+    .pointer-core.is-interactive{width:12px;height:12px}
+    .cursor-ripple{position:fixed;left:0;top:0;width:12px;height:12px;border:1px solid #d6f27a;border-radius:50%;pointer-events:none;z-index:34;transform:translate(-50%,-50%);animation:cursorRipple .55s ease-out forwards;box-shadow:0 0 16px #d6f27a88}
+    @keyframes cursorRipple{to{opacity:0;transform:translate(-50%,-50%) scale(5)}}
+    @media(hover:hover) and (pointer:fine){.pointer-aura,.pointer-core{display:block}.work-card{transition:transform .28s ease}.work-card:hover{transform:translateY(-5px)}.video-frame{transition:border-color .25s ease,box-shadow .25s ease}.video-frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(260px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(214,242,122,.14),transparent 70%);opacity:0;transition:opacity .2s ease}.work-card:hover .video-frame{border-color:#d6f27a99;box-shadow:0 14px 38px #0008,0 0 26px #d6f27a10}.work-card:hover .video-frame::before{opacity:1}.service{transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}.service:hover{border-color:#d6f27a88;box-shadow:0 12px 32px #d6f27a0c}.button:hover,.filter:hover{box-shadow:0 0 22px #d6f27a24}}
+    .hero h1 span{text-shadow:0 0 34px #d6f27a20}
+    @media(prefers-reduced-motion:reduce){.pointer-aura,.pointer-core,.cursor-ripple{display:none!important}.work-card,.service,.video-frame{transition:none!important}.scroll-progress{box-shadow:none}}
   </style>
 </head>
 <body>
@@ -102,6 +112,55 @@
     const revealItems=document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});revealItems.forEach(item=>observer.observe(item))}else{revealItems.forEach(item=>item.classList.add('visible'))}
     document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="pointer-aura" id="pointerAura" aria-hidden="true"></div>
+  <div class="pointer-core" id="pointerCore" aria-hidden="true"></div>
+  <script>
+    (()=>{
+      const progress=document.getElementById('scrollProgress');
+      let scrollFrame=0;
+      const updateProgress=()=>{
+        const max=document.documentElement.scrollHeight-window.innerHeight;
+        progress.style.transform=`scaleX(${max>0?Math.min(1,window.scrollY/max):0})`;
+        scrollFrame=0;
+      };
+      window.addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(updateProgress)},{passive:true});
+      window.addEventListener('resize',updateProgress,{passive:true});
+      updateProgress();
+
+      const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)');
+      const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(!finePointer.matches||reducedMotion.matches)return;
+      const aura=document.getElementById('pointerAura');
+      const core=document.getElementById('pointerCore');
+      let targetX=0,targetY=0,currentX=0,currentY=0,followFrame=0,seenPointer=false;
+      const follow=()=>{
+        currentX+=(targetX-currentX)*.18;
+        currentY+=(targetY-currentY)*.18;
+        aura.style.transform=`translate3d(${currentX}px,${currentY}px,0) translate(-50%,-50%)`;
+        if(Math.abs(targetX-currentX)>.35||Math.abs(targetY-currentY)>.35){followFrame=requestAnimationFrame(follow)}else followFrame=0;
+      };
+      window.addEventListener('pointermove',event=>{
+        if(event.pointerType==='touch')return;
+        targetX=event.clientX;targetY=event.clientY;
+        if(!seenPointer){currentX=targetX;currentY=targetY;seenPointer=true;aura.style.opacity='1';core.style.opacity='1'}
+        core.style.transform=`translate3d(${targetX}px,${targetY}px,0) translate(-50%,-50%)`;
+        if(!followFrame)followFrame=requestAnimationFrame(follow);
+        const target=event.target instanceof Element?event.target:null;
+        core.classList.toggle('is-interactive',!!target?.closest('a,button'));
+      },{passive:true});
+      const hidePointer=()=>{aura.style.opacity='0';core.style.opacity='0';core.classList.remove('is-interactive')};
+      window.addEventListener('blur',hidePointer);
+      document.documentElement.addEventListener('pointerleave',hidePointer);
+      document.documentElement.addEventListener('pointerenter',()=>{if(seenPointer){aura.style.opacity='1';core.style.opacity='1'}});
+      window.addEventListener('pointerdown',event=>{
+        if(event.pointerType==='touch'||event.button!==0)return;
+        const ripple=document.createElement('span');ripple.className='cursor-ripple';
+        ripple.style.left=`${event.clientX}px`;ripple.style.top=`${event.clientY}px`;
+        document.body.append(ripple);window.setTimeout(()=>ripple.remove(),600);
+      });
+    })();
   </script>
 </body>
 </html>
