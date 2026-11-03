@@ -130,7 +130,7 @@
     function showVideo(item){
       const card=document.createElement('article');card.className='work-card reveal';card.dataset.category=item.category||'shorts';
       const frame=document.createElement('div');frame.className='video-frame';
-      if(item.embedUrl){const embed=document.createElement('iframe');embed.src=item.embedUrl;embed.title=item.title||'SPIKE portfolio video';embed.loading='lazy';embed.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';embed.allowFullscreen=true;frame.append(embed)}
+      if(item.embedUrl){const embed=document.createElement('iframe');embed.src=item.embedUrl;embed.title=item.title||'SPIKE portfolio video';embed.loading='lazy';embed.referrerPolicy='strict-origin-when-cross-origin';embed.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';embed.allowFullscreen=true;frame.append(embed)}
       else{const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='metadata';video.setAttribute('aria-label',item.title||'SPIKE portfolio video');if(item.poster)video.poster=item.poster;const source=document.createElement('source');source.src=item.file;source.type='video/mp4';video.append(source);frame.append(video)}
       const title=document.createElement('h3');title.textContent=item.title||'SPIKE edit';
       const description=document.createElement('p');description.textContent=item.description||'Video edit by SPIKE';
@@ -142,7 +142,7 @@
         catch{shareStatus.textContent=`Copy this video link: ${videoUrl}`}
       });
       const discord=document.createElement('a');discord.href='https://discord.gg/SFktV6PY';discord.target='_blank';discord.rel='noopener noreferrer';discord.textContent='Open SPIKE Discord ↗';
-      actions.append(share,discord);card.append(frame,title,description,actions);videoGrid.append(card);
+      if(item.shareUrl){const watch=document.createElement('a');watch.href=item.shareUrl;watch.target='_blank';watch.rel='noopener noreferrer';watch.textContent='Watch on YouTube ↗';actions.append(share,watch,discord)}else{actions.append(share,discord)}card.append(frame,title,description,actions);videoGrid.append(card);
     }
     videoItems.forEach(showVideo);
     emptyGallery.hidden=videoItems.length>0;
