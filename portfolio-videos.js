@@ -183,13 +183,6 @@ window.SPIKE_VIDEOS = [
     file: "images/spike-store-shadow-tube-banner-collection.png"
   },
   {
-    title: "Spike Store Neon Gaming Banner",
-    category: "promo",
-    type: "image",
-    description: "An orange and violet voxel-style Spike Store banner.",
-    file: "images/spike-store-neon-gaming-banner.png"
-  },
-  {
     title: "Spike Store Neon Gaming Marketplace",
     category: "promo",
     type: "image",
