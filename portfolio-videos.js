@@ -1,5 +1,33 @@
 window.SPIKE_VIDEOS = [
   {
+    title: "Nexus Play — Red Banner",
+    category: "promo",
+    type: "image",
+    description: "A red and black gaming channel banner for Nexus Play.",
+    file: "images/nexus-play-red.gif"
+  },
+  {
+    title: "Pixel Mart World",
+    category: "promo",
+    type: "image",
+    description: "A bright voxel-style banner for Pixel Mart World.",
+    file: "images/pixel-mart-world.gif"
+  },
+  {
+    title: "Void Hub Portal",
+    category: "promo",
+    type: "image",
+    description: "A purple portal-themed gaming banner for Void Hub.",
+    file: "images/void-hub-portal.gif"
+  },
+  {
+    title: "Zenith Store Neon",
+    category: "promo",
+    type: "image",
+    description: "A neon green gaming marketplace banner for Zenith Store.",
+    file: "images/zenith-store-neon.gif"
+  },
+  {
     title: "Youtubers|Meet Up ഞങ്ങൾ  അലമ്പാക്കി|Youtube Creator Collective Kochi|Shadow Tube",
     category: "youtube",
     description: "Long-form video by Sonu Sunil.",
@@ -174,33 +202,5 @@ window.SPIKE_VIDEOS = [
     type: "image",
     description: "An animated voxel-style Spike Store banner.",
     file: "images/spike-store-animated.gif"
-  },
-  {
-    title: "Nexus Play — Red Banner",
-    category: "promo",
-    type: "image",
-    description: "A red and black gaming channel banner for Nexus Play.",
-    file: "images/nexus-play-red.gif"
-  },
-  {
-    title: "Pixel Mart World",
-    category: "promo",
-    type: "image",
-    description: "A bright voxel-style banner for Pixel Mart World.",
-    file: "images/pixel-mart-world.gif"
-  },
-  {
-    title: "Void Hub Portal",
-    category: "promo",
-    type: "image",
-    description: "A purple portal-themed gaming banner for Void Hub.",
-    file: "images/void-hub-portal.gif"
-  },
-  {
-    title: "Zenith Store Neon",
-    category: "promo",
-    type: "image",
-    description: "A neon green gaming marketplace banner for Zenith Store.",
-    file: "images/zenith-store-neon.gif"
   }
 ];
