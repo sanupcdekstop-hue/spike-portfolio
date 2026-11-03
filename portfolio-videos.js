@@ -2,9 +2,8 @@ window.SPIKE_VIDEOS = [
   {
     title: "Youtubers|Meet Up ഞങ്ങൾ  അലമ്പാക്കി|Youtube Creator Collective Kochi|Shadow Tube",
     category: "youtube",
-    description: "Long-form YouTube video by Sonu Sunil.",
-    embedUrl: "https://www.youtube.com/embed/1e5I8HpmjEY?rel=0",
-    shareUrl: "https://youtu.be/1e5I8HpmjEY"
+    description: "Long-form video by Sonu Sunil.",
+    file: "videos/youtube_meetup.mp4"
   },
   {
     title: "Short-form Reel Edit",
