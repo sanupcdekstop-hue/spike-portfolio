@@ -30,13 +30,31 @@
     @media(hover:hover) and (pointer:fine){.pointer-aura,.neon-arrow{display:block}.work-card{transition:transform .28s ease}.work-card:hover{transform:translateY(-5px)}.video-frame{transition:border-color .25s ease,box-shadow .25s ease}.video-frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(260px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(214,242,122,.14),transparent 70%);opacity:0;transition:opacity .2s ease}.work-card:hover .video-frame{border-color:#d6f27a99;box-shadow:0 14px 38px #0008,0 0 26px #d6f27a10}.work-card:hover .video-frame::before{opacity:1}.service{transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}.service:hover{border-color:#d6f27a88;box-shadow:0 12px 32px #d6f27a0c}.button:hover,.filter:hover{box-shadow:0 0 22px #d6f27a24}}
     .hero h1 span{text-shadow:0 0 34px #d6f27a20}
     @media(prefers-reduced-motion:reduce){.pointer-aura,.neon-arrow,.cursor-ripple{display:none!important}body.neon-cursor-active,body.neon-cursor-active *{cursor:auto!important}.work-card,.service,.video-frame{transition:none!important}.scroll-progress{box-shadow:none}}
+    .websites-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .website-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#131619,#0c0e10);transition:transform .28s ease,border-color .25s ease,box-shadow .25s ease}
+    .website-link{display:block;height:100%}
+    .website-preview{position:relative;overflow:hidden;aspect-ratio:1.6;border-bottom:1px solid var(--line);background:#0b0d0f}
+    .website-browserbar{position:absolute;inset:0 0 auto;height:31px;z-index:2;display:flex;align-items:center;gap:10px;padding:0 11px;background:#171a1c;border-bottom:1px solid #ffffff12;color:#939a96;font-size:.62rem}
+    .browser-dots{display:flex;gap:4px;flex:0 0 auto}.browser-dots i{display:block;width:6px;height:6px;border-radius:50%;background:#545b56}.browser-dots i:first-child{background:#d6f27a}
+    .website-address{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:3px 10px;border:1px solid #ffffff0c;border-radius:99px;background:#0c0e10;color:#89918c;font-size:.59rem;letter-spacing:.02em}
+    .website-live{margin-left:auto;display:flex;align-items:center;gap:5px;color:#d6f27a;font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}.website-live::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 9px var(--accent)}
+    .website-screen{position:absolute;inset:31px 0 0;overflow:hidden;background:#0a0b0d}
+    .website-screen iframe{position:absolute;left:0;top:0;width:160%;height:160%;border:0;transform:scale(.625);transform-origin:top left;pointer-events:none;background:#0a0b0d}
+    .website-meta{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px 20px}
+    .website-kind{color:var(--accent);font-size:.62rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase}
+    .website-meta h3{font-size:1.2rem;letter-spacing:-.045em;margin:6px 0 3px}
+    .website-meta p{margin:0;color:var(--muted);font-size:.76rem;line-height:1.55;max-width:440px}
+    .website-open{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border:1px solid #42474a;border-radius:50%;color:var(--accent);font-size:1.05rem;transition:transform .2s,border-color .2s,background .2s}
+    @media(hover:hover) and (pointer:fine){.website-card:hover{transform:translateY(-5px);border-color:#d6f27a88;box-shadow:0 16px 42px #0008,0 0 26px #d6f27a0c}.website-card:hover .website-preview{border-color:#d6f27a66}.website-card:hover .website-open{transform:translate(2px,-2px);border-color:var(--accent);background:#d6f27a12}}
+    @media(max-width:650px){.websites-grid{grid-template-columns:1fr}.website-meta{padding:16px}.website-preview{aspect-ratio:1.45}}
+    @media(prefers-reduced-motion:reduce){.website-card,.website-open{transition:none!important}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="topbar"><div class="wrap bar">
     <a class="brand" href="#home" aria-label="SPIKE home">SPIKE<i>.</i></a>
-    <nav class="nav" id="nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <nav class="nav" id="nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#work">Work</a><a href="#websites">Websites</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
     <a class="button" href="https://discord.gg/SFktV6PY" target="_blank" rel="noopener noreferrer">Let's talk <span aria-hidden="true">↗</span></a>
     <button class="menu" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="nav" aria-expanded="false">Menu</button>
   </div></header>
@@ -54,8 +72,21 @@
       <p class="portfolio-empty" id="portfolioEmpty"><strong>Your video gallery is ready for your edits.</strong>Put an MP4 in the <code>videos</code> folder, then add its title and file name to <code>portfolio-videos.js</code>. The README has a copy-and-paste example.</p>
       <p class="share-status" id="shareStatus" aria-live="polite"></p>
     </div></section>
+    <section class="section" id="websites"><div class="wrap">
+      <div class="section-head reveal"><div><div class="number">02 / WEBSITE PROJECTS</div><h2>Websites, in the wild.</h2><p>A couple of sites I’ve designed and built. Open a project to explore the live website.</p></div></div>
+      <div class="websites-grid">
+        <article class="website-card reveal"><a class="website-link" href="https://harinived01-maker.github.io/sanu-apperez/" target="_blank" rel="noopener noreferrer" aria-label="Open the Apprezzo website in a new tab">
+          <div class="website-preview" aria-hidden="true"><div class="website-browserbar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="website-address">harinived01-maker.github.io/sanu-apperez</span><span class="website-live">Live</span></div><div class="website-screen"><iframe src="https://harinived01-maker.github.io/sanu-apperez/" title="Apprezzo live website preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div></div>
+          <div class="website-meta"><div><div class="website-kind">Brand website · 01</div><h3>Apprezzo</h3><p>A dark, editorial showcase for video, design, and digital work.</p></div><span class="website-open" aria-hidden="true">↗</span></div>
+        </a></article>
+        <article class="website-card reveal"><a class="website-link" href="https://harinived01-maker.github.io/noirve-site/" target="_blank" rel="noopener noreferrer" aria-label="Open the Noirve website in a new tab">
+          <div class="website-preview" aria-hidden="true"><div class="website-browserbar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="website-address">harinived01-maker.github.io/noirve-site</span><span class="website-live">Live</span></div><div class="website-screen"><iframe src="https://harinived01-maker.github.io/noirve-site/" title="Noirve live website preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div></div>
+          <div class="website-meta"><div><div class="website-kind">Creative studio · 02</div><h3>Noirve</h3><p>A calm, monochrome home for independent creative work.</p></div><span class="website-open" aria-hidden="true">↗</span></div>
+        </a></article>
+      </div>
+    </div></section>
     <section class="section" id="services"><div class="wrap services-layout">
-      <div class="services-intro reveal"><div class="number">02 / SERVICES</div><h2>Made for your next idea.</h2><p class="muted">Creative support for video, visual effects, logos, and websites. Each enquiry starts with a conversation about what you need and the project scope.</p><a class="button" href="https://wa.me/918921577147?text=Hi%20SPIKE%2C%20I%27d%20like%20to%20ask%20about%20a%20project." target="_blank" rel="noopener noreferrer">Ask about a project ↗</a></div>
+      <div class="services-intro reveal"><div class="number">03 / SERVICES</div><h2>Made for your next idea.</h2><p class="muted">Creative support for video, visual effects, logos, and websites. Each enquiry starts with a conversation about what you need and the project scope.</p><a class="button" href="https://wa.me/918921577147?text=Hi%20SPIKE%2C%20I%27d%20like%20to%20ask%20about%20a%20project." target="_blank" rel="noopener noreferrer">Ask about a project ↗</a></div>
       <div class="services-grid">
         <article class="service reveal"><div class="service-icon" aria-hidden="true">▯</div><h3>Instagram Reels & YouTube Shorts</h3><p>Clear pacing, captions, and a strong opening for vertical video.</p><a class="enquire" href="https://wa.me/918921577147?text=Hi%20SPIKE%2C%20I%27m%20interested%20in%20a%20Reel%20or%20Short." target="_blank" rel="noopener noreferrer">Enquire about short-form ↗</a></article>
         <article class="service reveal"><div class="service-icon" aria-hidden="true">▷</div><h3>YouTube video editing</h3><p>Thoughtful cuts and structure shaped around your footage.</p><a class="enquire" href="https://wa.me/918921577147?text=Hi%20SPIKE%2C%20I%27d%20like%20to%20ask%20about%20YouTube%20editing." target="_blank" rel="noopener noreferrer">Enquire about YouTube ↗</a></article>
@@ -68,15 +99,15 @@
       </div>
     </div></section>
     <section class="section" id="about"><div class="wrap about-grid">
-      <div class="about-copy reveal"><div class="number">03 / ABOUT SPIKE</div><h2>Independent by design.</h2><p>SPIKE is my independent creative brand. I work across video editing, visual effects, logo design, and website creation, with a focus on clear ideas and considered details.</p><p class="muted">I’m building my portfolio one project at a time. We’ll agree on the scope before a project begins.</p></div>
+      <div class="about-copy reveal"><div class="number">04 / ABOUT SPIKE</div><h2>Independent by design.</h2><p>SPIKE is my independent creative brand. I work across video editing, visual effects, logo design, and website creation, with a focus on clear ideas and considered details.</p><p class="muted">I’m building my portfolio one project at a time. We’ll agree on the scope before a project begins.</p></div>
       <div class="principles reveal"><div class="principle"><b>Video editing</b><span>Reels, Shorts, YouTube, ads, and promos.</span></div><div class="principle"><b>Website creation</b><span>Responsive portfolio and landing pages.</span></div><div class="principle"><b>Logo design</b><span>Logo concepts for creators and small brands.</span></div><div class="principle"><b>VFX & motion</b><span>Visual effects and compositing for video.</span></div></div>
     </div></section>
     <section class="section" id="process"><div class="wrap about-grid">
-      <div class="reveal"><div class="number">04 / HOW IT WORKS</div><h2>Good work, clear steps.</h2><p class="muted">Send a short description of what you need. We’ll agree on the scope, deliverables, revisions, and timing before a project begins.</p></div>
+      <div class="reveal"><div class="number">05 / HOW IT WORKS</div><h2>Good work, clear steps.</h2><p class="muted">Send a short description of what you need. We’ll agree on the scope, deliverables, revisions, and timing before a project begins.</p></div>
       <div class="reveal"><div class="number">YOUR PROJECT</div><h2>Start with the idea.</h2><p class="muted">Tell me which service you’re interested in, what you want to make, and your preferred timeline. I’ll reply to discuss the next step.</p><a class="button primary" href="https://wa.me/918921577147?text=Hi%20SPIKE%2C%20I%27d%20like%20to%20discuss%20a%20project.%20Service%3A%20%20Timeline%3A%20%20Details%3A%20" target="_blank" rel="noopener noreferrer">Start a WhatsApp enquiry ↗</a></div>
     </div></section>
     <section class="section" id="contact"><div class="wrap contact">
-      <div class="reveal"><div class="number">05 / CONTACT</div><h2>Let’s make something clear and considered.</h2><p class="muted">For a project enquiry, a question, or a quick introduction, choose the channel that works for you.</p></div>
+      <div class="reveal"><div class="number">06 / CONTACT</div><h2>Let’s make something clear and considered.</h2><p class="muted">For a project enquiry, a question, or a quick introduction, choose the channel that works for you.</p></div>
       <div class="contact-links reveal"><a href="https://wa.me/918921577147?text=Hi%20SPIKE%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer"><span>WhatsApp <small>+91 89215 77147</small></span><strong aria-hidden="true">↗</strong></a><a href="https://www.instagram.com/sanusunil_?exln=NGEycTA1czBwajI3" target="_blank" rel="noopener noreferrer"><span>Instagram <small>@sanusunil_</small></span><strong aria-hidden="true">↗</strong></a><a href="https://discord.gg/SFktV6PY" target="_blank" rel="noopener noreferrer"><span>Discord <small>SPIKE community & enquiries</small></span><strong aria-hidden="true">↗</strong></a><p class="contact-note">Please avoid posting private project details in public Discord channels. Use a direct contact link for a private enquiry.</p></div>
     </div></section>
   </main>
