@@ -24,6 +24,36 @@ window.SPIKE_VIDEOS = [
     file: "videos/reel sabari.mp4"
   },
   {
+    title: "Survival Server — Promotional Banner",
+    category: "promo",
+    description: "A cinematic banner video for a survival server.",
+    file: "videos/01_survival_server.mp4"
+  },
+  {
+    title: "Skyblock Server — Promotional Banner",
+    category: "promo",
+    description: "A promotional video for a skyblock server.",
+    file: "videos/02_skyblock_server.mp4"
+  },
+  {
+    title: "Product Advertisement",
+    category: "ads",
+    description: "A short product advertisement edit.",
+    file: "videos/03_product_ad.mp4"
+  },
+  {
+    title: "Island Quest — Promotional Banner",
+    category: "promo",
+    description: "A game-inspired island quest banner video.",
+    file: "videos/04_island_quest.mp4"
+  },
+  {
+    title: "Esports Tournament — Promotional Banner",
+    category: "promo",
+    description: "A high-energy esports tournament banner video.",
+    file: "videos/05_esports_tournament.mp4"
+  },
+  {
     title: "AR Snacks — Food Advertisement",
     category: "ads",
     type: "image",
