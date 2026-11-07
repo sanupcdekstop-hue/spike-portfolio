@@ -59,7 +59,11 @@
     body{background:radial-gradient(ellipse at 10% 0%,rgba(71,232,135,.14),transparent 36rem),radial-gradient(ellipse at 90% 10%,rgba(30,180,82,.08),transparent 32rem),var(--bg)}
     .topbar{background:rgba(7,16,10,.92);border-bottom-color:rgba(107,210,135,.16)}
     ::selection{background:rgba(71,232,135,.32);color:#f1fff4}
-    </style>
+    
+    .welcome-banner{width:min(var(--max),calc(100% - 48px));margin:22px auto 0;overflow:hidden;border:1px solid #47e88755;border-radius:var(--radius);background:linear-gradient(135deg,#061008,#0b1a10);box-shadow:0 12px 38px #0007,0 0 24px #47e88712}
+    .welcome-banner video{display:block;width:100%;max-height:380px;aspect-ratio:16/9;object-fit:contain;background:#050906}
+    @media(max-width:650px){.welcome-banner{width:calc(100% - 32px);margin-top:14px}.welcome-banner video{max-height:240px}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -69,6 +73,7 @@
     <a class="button" href="https://discord.gg/SFktV6PY" target="_blank" rel="noopener noreferrer">Let's talk <span aria-hidden="true">↗</span></a>
     <button class="menu" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="nav" aria-expanded="false">Menu</button>
   </div></header>
+  <section class="welcome-banner" aria-label="SPIKE welcome banner"><video autoplay muted loop playsinline controls preload="metadata" aria-label="Welcome to SPIKE"><source src="videos/WhatsApp%20Video%202026-11-07%20at%2017.20.23.mp4" type="video/mp4">Your browser does not support embedded video.</video></section>
   <main id="main">
     <section class="hero" id="home"><video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="videos/05_esports_tournament.mp4" type="video/mp4"></video><div class="hero-art" aria-hidden="true"><div class="orbit"><b></b></div></div><div class="wrap"><div class="hero-copy reveal">
       <div class="eyebrow">Independent creative brand&nbsp; /&nbsp; Video · design · digital</div>
