@@ -1,70 +1,9 @@
 window.SPIKE_VIDEOS = [
   {
-    title: "SPIKE — Glitch Banner",
-    category: "promo",
-    type: "image",
-    description: "A red glitch-style animated banner for SPIKE.",
-    file: "images/spike-glitch.gif"
-  },
-  {
-    title: "SPIKE — Neon Banner",
-    category: "promo",
-    type: "image",
-    description: "A blue neon-frame animation for SPIKE.",
-    file: "images/spike-neon.gif"
-  },
-  {
-    title: "SPIKE — Sunset Banner",
-    category: "promo",
-    type: "image",
-    description: "A warm sunset-gradient animation for SPIKE.",
-    file: "images/spike-sunset.gif"
-  },
-  {
-    title: "Shadow Tube — Glitch Motion",
-    category: "promo",
-    description: "A red glitch animation for Shadow Tube.",
-    file: "videos/shadowtube-glitch.mp4"
-  },
-  {
-    title: "Shadow Tube — Gold Motion",
-    category: "promo",
-    description: "A gold particle animation for Shadow Tube.",
-    file: "videos/shadowtube-gold.mp4"
-  },
-  {
-    title: "Shadow Tube — Money Motion",
-    category: "promo",
-    description: "A green animated banner for Shadow Tube.",
-    file: "videos/shadowtube-money.mp4"
-  },
-  {
-    title: "Nexus Play — Red Banner",
-    category: "promo",
-    type: "image",
-    description: "A red and black gaming channel banner for Nexus Play.",
-    file: "images/nexus-play-red.gif"
-  },
-  {
-    title: "Pixel Mart World",
-    category: "promo",
-    type: "image",
-    description: "A bright voxel-style banner for Pixel Mart World.",
-    file: "images/pixel-mart-world.gif"
-  },
-  {
-    title: "Void Hub Portal",
-    category: "promo",
-    type: "image",
-    description: "A purple portal-themed gaming banner for Void Hub.",
-    file: "images/void-hub-portal.gif"
-  },
-  {
-    title: "Zenith Store Neon",
-    category: "promo",
-    type: "image",
-    description: "A neon green gaming marketplace banner for Zenith Store.",
-    file: "images/zenith-store-neon.gif"
+    title: "Done by SPIKE",
+    category: "shorts",
+    description: "Video edit by SPIKE.",
+    file: "videos/done by spike compressed.mp4"
   },
   {
     title: "Youtubers|Meet Up ഞങ്ങൾ  അലമ്പാക്കി|Youtube Creator Collective Kochi|Shadow Tube",
@@ -127,44 +66,6 @@ window.SPIKE_VIDEOS = [
     file: "videos/05_esports_tournament.mp4"
   },
   {
-    title: "AR Snacks — Food Advertisement",
-    category: "ads",
-    type: "image",
-    description: "Advertisement artwork for AR Snacks.",
-    file: "videos/IMG_20261029_230103.jpg"
-  },
-  {
-    title: "Loxtens — Social Media Promotion",
-    category: "ads",
-    type: "image",
-    description: "Promotional artwork for Loxtens.",
-    file: "videos/photo for editz.jpeg"
-  },
-  {
-    title: "Voxel Frontier — Spike Games",
-    category: "promo",
-    description: "A blocky sandbox-game promotional animation for Spike Games.",
-    file: "videos/spike-games-01-voxel-frontier.mp4"
-  },
-  {
-    title: "Emerald Dungeon — Spike Games",
-    category: "promo",
-    description: "A voxel-style dungeon banner animation for Spike Games.",
-    file: "videos/spike-games-02-emerald-dungeon.mp4"
-  },
-  {
-    title: "Sky Islands — Spike Games",
-    category: "promo",
-    description: "A floating-islands game banner animation for Spike Games.",
-    file: "videos/spike-games-03-sky-islands.mp4"
-  },
-  {
-    title: "Redstone Rush — Spike Games",
-    category: "promo",
-    description: "A lava-lit voxel arena animation for Spike Games.",
-    file: "videos/spike-games-04-redstone-rush.mp4"
-  },
-  {
     title: "Loot Vault — Spike Store",
     category: "promo",
     description: "A voxel loot-vault promotional animation for Spike Store.",
@@ -183,22 +84,18 @@ window.SPIKE_VIDEOS = [
     file: "videos/spike-store-03-golden-market.mp4"
   },
   {
-    title: "Nightfall — Shadow Tube",
-    category: "promo",
-    description: "A nighttime sandbox-game banner animation for Shadow Tube.",
-    file: "videos/shadow-tube-01-nightfall.mp4"
+    title: "AR Snacks — Food Advertisement",
+    category: "ads",
+    type: "image",
+    description: "Advertisement artwork for AR Snacks.",
+    file: "videos/IMG_20261029_230103.jpg"
   },
   {
-    title: "Moonlit Forest — Shadow Tube",
-    category: "promo",
-    description: "A moonlit voxel-forest animation for Shadow Tube.",
-    file: "videos/shadow-tube-02-moonlit-forest.mp4"
-  },
-  {
-    title: "Portal Stream — Shadow Tube",
-    category: "promo",
-    description: "A glowing portal-themed banner animation for Shadow Tube.",
-    file: "videos/shadow-tube-03-portal-stream.mp4"
+    title: "Loxtens — Social Media Promotion",
+    category: "ads",
+    type: "image",
+    description: "Promotional artwork for Loxtens.",
+    file: "videos/photo for editz.jpeg"
   },
   {
     title: "Futuristic Gaming Banner Showcase",
@@ -206,13 +103,6 @@ window.SPIKE_VIDEOS = [
     type: "image",
     description: "A collection of futuristic gaming banner concepts.",
     file: "images/futuristic-gaming-banner-showcase.png"
-  },
-  {
-    title: "Shadow Tube — Animated Banner",
-    category: "promo",
-    type: "image",
-    description: "An animated red and black Shadow Tube channel banner.",
-    file: "images/shadow-tube-animated.gif"
   },
   {
     title: "Spike Store & Shadow Tube Banner Collection",
@@ -229,16 +119,66 @@ window.SPIKE_VIDEOS = [
     file: "images/spike-store-neon-gaming-marketplace.png"
   },
   {
+    title: "SPIKE — Glitch Banner",
+    category: "promo",
+    type: "image",
+    description: "A red glitch-style animated banner for SPIKE.",
+    file: "images/spike-glitch.gif"
+  },
+  {
+    title: "SPIKE — Neon Banner",
+    category: "promo",
+    type: "image",
+    description: "A blue neon-frame animation for SPIKE.",
+    file: "images/spike-neon.gif"
+  },
+  {
+    title: "SPIKE — Sunset Banner",
+    category: "promo",
+    type: "image",
+    description: "A warm sunset-gradient animation for SPIKE.",
+    file: "images/spike-sunset.gif"
+  },
+  {
+    title: "Nexus Play — Red Banner",
+    category: "promo",
+    type: "image",
+    description: "A red and black gaming channel banner for Nexus Play.",
+    file: "images/nexus-play-red.gif"
+  },
+  {
+    title: "Pixel Mart World",
+    category: "promo",
+    type: "image",
+    description: "A bright voxel-style banner for Pixel Mart World.",
+    file: "images/pixel-mart-world.gif"
+  },
+  {
+    title: "Void Hub Portal",
+    category: "promo",
+    type: "image",
+    description: "A purple portal-themed gaming banner for Void Hub.",
+    file: "images/void-hub-portal.gif"
+  },
+  {
+    title: "Zenith Store Neon",
+    category: "promo",
+    type: "image",
+    description: "A neon green gaming marketplace banner for Zenith Store.",
+    file: "images/zenith-store-neon.gif"
+  },
+  {
+    title: "Shadow Tube — Animated Banner",
+    category: "promo",
+    type: "image",
+    description: "An animated red and black Shadow Tube channel banner.",
+    file: "images/shadow-tube-animated.gif"
+  },
+  {
     title: "Spike Store — Animated Banner",
     category: "promo",
     type: "image",
     description: "An animated voxel-style Spike Store banner.",
     file: "images/spike-store-animated.gif"
-  },
-  {
-    title: "Done by SPIKE",
-    category: "shorts",
-    description: "Video edit by SPIKE.",
-    file: "videos/done by spike compressed.mp4"
   }
 ];
