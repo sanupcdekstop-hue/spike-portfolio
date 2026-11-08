@@ -234,5 +234,11 @@ window.SPIKE_VIDEOS = [
     type: "image",
     description: "An animated voxel-style Spike Store banner.",
     file: "images/spike-store-animated.gif"
+  },
+  {
+    title: "Done by SPIKE",
+    category: "shorts",
+    description: "Video edit by SPIKE.",
+    file: "videos/done by spike compressed.mp4"
   }
 ];
